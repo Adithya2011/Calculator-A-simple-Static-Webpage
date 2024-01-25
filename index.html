@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(220, 210, 210);
+        }
+
+        footer {
+            font-size: 18px;
+        }
+        #one{
+            background-color: rgb(15, 15, 35);
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            padding: 70px;
+        }
+        /* *{
+            background-color: rgba(4, 4, 28,0.7);
+        } */
+        body:not(one){
+            background-color: rgba(4, 4, 28,0.5);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="one">
+             <h1><i>Calculate!!</i></h1>
+        <form>
+            <table border="1">      
+                <tr><td><input type="number" id="inp1" value=""></td></tr>
+                <tr><td><input type="number" id="inp2" value=""></td></tr>
+            </table>
+        </form>
+        <div>
+            <button id="add" onclick="ad()">+</button>
+            <button id="sub">-</button>
+            <button id="mul">*</button>
+            <button id="div">/</button>
+            <button id="mod">%</button>
+        </div>
+    
+        <footer><h3>Answer:</h3></footer>
+    </div>
+    
+    <script>
+        let ans=document.querySelector("h3");
+        let inp1=document.querySelector("#inp1");
+        let inp2=document.querySelector("#inp2");
+
+        let add=document.querySelector("#add");
+        let sub=document.querySelector("#sub");
+        let mul=document.querySelector("#mul");
+        let div=document.querySelector("#div");
+        let mod=document.querySelector("#mod");
+
+        add.addEventListener("click",() => {   
+            ans.textContent = "Answer: " + (Number(inp1.value) + Number(inp2.value));
+        });
+
+        sub.addEventListener("click",() => {   
+            ans.textContent = "Answer: " + (Number(inp1.value) - Number(inp2.value));
+        });
+
+        mul.addEventListener("click",() => {   
+            ans.textContent = "Answer: " + (Number(inp1.value) * Number(inp2.value));
+        });
+
+        div.addEventListener("click",() => {   
+            ans.textContent = "Answer: " + (Number(inp1.value) / Number(inp2.value));
+        });
+
+        mod.addEventListener("click",() => {   
+            ans.textContent = "Answer: " + (Number(inp1.value) %  Number(inp2.value));
+        });
+    </script>
+
+</body>
+</html>
